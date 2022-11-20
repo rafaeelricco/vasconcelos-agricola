@@ -1,0 +1,97 @@
+{
+  "name": "vasconcelos-agricola",
+  "version": "1.0.0",
+  "description": "Vasconcelos Agrícola Ltda. é uma empresa de agropecuária, com sede em Cachoeira do Sul.",
+  "main": "next.config.js",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "find:unused": "next-unused"
+  },
+  "next-unused": {
+    "alias": {},
+    "include": [
+      "assets",
+      "components",
+      "pages",
+      "styles"
+    ],
+    "exclude": [],
+    "entrypoints": []
+  },
+  "dependencies": {
+    "@babel/core": "^7.19.6",
+    "@emailjs/browser": "^3.7.0",
+    "@emotion/react": "^11.10.4",
+    "@emotion/server": "^11.10.0",
+    "@mantine/carousel": "^5.6.2",
+    "@mantine/core": "^5.6.2",
+    "@mantine/hooks": "^5.6.2",
+    "@mantine/next": "^5.6.2",
+    "@portabletext/react": "^1.0.6",
+    "@react-aria/ssr": "^3.3.0",
+    "@react-spectrum/provider": "^3.5.1",
+    "@tabler/icons": "^1.97.0",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "axios": "^0.27.2",
+    "embla-carousel": "7.0.3",
+    "embla-carousel-autoplay": "^7.0.3",
+    "embla-carousel-react": "^7.0.3",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-promise": "^6.0.1",
+    "form-data": "^4.0.0",
+    "next": "^12.3.1",
+    "normalize.css": "^8.0.1",
+    "nprogress": "^0.2.0",
+    "react": "18.2.0",
+    "react-cookie-consent": "^8.0.1",
+    "react-dom": "18.2.0",
+    "react-facebook-pixel": "^1.0.4",
+    "react-hook-form": "^7.36.0",
+    "react-inner-html": "^1.0.1",
+    "react-is": "^18.2.0",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.0.2",
+    "sharp": "^0.31.1",
+    "styled-components": "^5.3.6",
+    "swiper": "^8.4.4",
+    "tabler-icons-react": "^1.55.0",
+    "webpack": "^5.74.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
+    "@svgr/webpack": "^6.3.1",
+    "@types/node": "18.7.18",
+    "@types/react": "18.0.20",
+    "@types/react-dom": "18.0.6",
+    "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/parser": "^5.38.0",
+    "eslint": "^8.23.1",
+    "eslint-config-next": "12.3.1",
+    "husky": "^8.0.2",
+    "next-unused": "^0.0.6",
+    "react-icons": "^4.4.0",
+    "typescript": "^4.0.5"
+  },
+  "bundleDependencies": [
+    "@emailjs/browser"
+  ],
+  "resolutions": {
+    "styled-components": "^5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rafaeelricco/vasconcelos-agricola"
+  },
+  "author": "Rafael Ricco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaeelricco/vasconcelos-agricola/issues"
+  },
+  "homepage": "https://github.com/rafaeelricco/vasconcelos-agricola#readme"
+}

@@ -1,0 +1,102 @@
+.details {
+  margin: 2rem 0 2rem 0;
+  line-height: 1.6;
+}
+
+@import '/assets/scss/breakpoints.scss';
+
+.layout {
+  display: grid;
+  grid-gap: 1.618rem;
+  margin: 0 auto;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  @include screen('small') {
+    margin: 1rem 0rem;
+    grid-template-columns: 1fr;
+  }
+}
+
+.title {
+  font-weight: var(--font-bold);
+  font-size: var(--title);
+  margin: 0rem 0 0.518rem 0;
+  color: var(--dark-green);
+  text-align: center;
+}
+
+.subtitle {
+  font-size: var(--subtitle);
+  font-weight: var(--font-regular);
+  color: #8e8e8e;
+  text-align: center;
+  line-height: 1.318;
+  margin: 0 0 2.618rem 0;
+}
+
+.label {
+  display: grid;
+  margin: 0.218rem 0 0.218rem 0;
+}
+
+.labelCheckbox {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  grid-gap: 0.418rem;
+}
+
+.checkboxes {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.checkboxe {
+  display: grid;
+  justify-items: stretch;
+  justify-content: center;
+  grid-gap: 8px;
+}
+
+.checkbox {
+  font-size: 15px;
+}
+
+.buttons {
+  display: grid;
+  justify-items: center;
+  margin: 0 0 2.618rem 0;
+}
+
+.send {
+  display: flex;
+  gap: 0.518rem;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 50%;
+  background: #f58220;
+  border-radius: 0.618rem;
+  font-weight: bold;
+  color: #ffff;
+  cursor: pointer;
+  @include screen('small') {
+    width: 80%;
+  }
+}
+.whatsapp {
+  display: flex;
+  gap: 0.518rem;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 50%;
+  background: #25d366;
+  border-radius: 0.618rem;
+  font-weight: bold;
+  color: #ffff;
+  cursor: pointer;
+  @include screen('small') {
+    width: 80%;
+  }
+}

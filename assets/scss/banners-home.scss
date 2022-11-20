@@ -1,0 +1,72 @@
+@import './breakpoints.scss';
+@import './base.scss';
+
+.banner-title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.218rem;
+  text-align: center;
+  @include screen (small) {
+    font-size: 32px;
+    line-height: 1.1;
+    margin-bottom: 0.418rem;
+  }
+}
+
+.banner-subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 0.618rem;
+  margin-top: 0;
+  text-align: center;
+  @include screen (small) {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+}
+
+.banners-container {
+  display: grid;
+  position: relative;
+  justify-items: center;
+  align-items: center;
+}
+
+.banner-info {
+  display: grid;
+  grid-template-columns: 64vw;
+  position: absolute;
+  color: white;
+  justify-items: center;
+  @include screen (small) {
+    grid-template-columns: 80vw;
+  }
+}
+
+.banner-overlay {
+  height: 100%;
+  width: 100vw;
+  background: black;
+  z-index: -1;
+  overflow: hidden;
+}
+
+
+.banner-button {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 0rem 1.218rem;
+  height: 2rem;
+  border-radius: 0.618rem;
+  background-color: #f58220;
+  color: #fff;
+  font-weight: 500;
+  font-size: var(--details);
+  letter-spacing: -0.5px;
+  cursor: pointer;
+}

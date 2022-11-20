@@ -1,0 +1,42 @@
+@import '/assets/scss/breakpoints.scss';
+
+.layout {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2.618rem;
+  margin: 5rem 0;
+  align-items: center;
+  @include screen(medium) {
+    grid-auto-flow: dense;
+    grid-template-columns: 1fr;
+  }
+}
+
+.title {
+  font-weight: var(--font-bold);
+  font-size: var(--title);
+  color: var(--dark-green);
+  margin: var(--title-margin);
+}
+.subtitle {
+  font-size: var(--subtitle);
+  font-weight: var(--font-regular);
+  color: #8e8e8e;
+  line-height: 1.5;
+  margin: 0rem 0 0.618rem 0;
+}
+
+.reading {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  grid-gap: 0.318rem;
+  align-items: center;
+}
+
+.anchor {
+  font-size: var(--details);
+  font-weight: 700;
+  color: #ff7f00;
+}

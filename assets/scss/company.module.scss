@@ -1,0 +1,40 @@
+@import './breakpoints.scss';
+
+.layout {
+  margin: 1rem 0 1rem 0;
+}
+
+.cards {
+  display: grid;
+  grid-auto-flow: column;
+  justify-items: center;
+  grid-gap: 1rem;
+  margin: 2.618rem 0 2.618rem 0;
+  @include screen('small') {
+    grid-auto-flow: dense;
+  }
+}
+
+.title {
+  font-weight: var(--font-bold);
+  font-size: var(--title);
+  color: var(--dark-green);
+  margin: 1rem 0 0 0;
+}
+.text {
+  font-size: var(--subtitle);
+  font-weight: var(--font-regular);
+  color: #8e8e8e;
+  margin: 0.618rem 0 0.618rem 0;
+  line-height: 1.6;
+}
+
+.navegation {
+  display: grid;
+  grid-auto-flow: column;
+  justify-items: center;
+  margin: 1.618rem 0 1.618rem 0;
+  @include screen('infinity') {
+    display: none;
+  }
+}

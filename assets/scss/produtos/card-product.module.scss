@@ -1,0 +1,28 @@
+.container {
+  display: grid;
+  justify-content: space-evenly;
+  width: 270px;
+  height: 350px;
+  border: 1px solid #f58220;
+  padding: 0.518rem;
+  border-radius: 24px;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+.layout {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  margin: var(--margin-inner-card);
+}
+
+.title {
+  padding: 0.5rem 0;
+  text-align: center;
+  line-height: 1.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  position: relative;
+}

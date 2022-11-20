@@ -1,0 +1,140 @@
+@import '../breakpoints.scss';
+
+.info {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  color: #fff;
+  bottom: 16%;
+  left: 15vw;
+  padding-left: 24px;
+  padding-right: 24px;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s ease-out;
+  @media (max-width: 680px) {
+    bottom: 10%;
+    left: 0vw;
+  }
+  @media (max-width: 778px) {
+    bottom: 10%;
+    left: 0vw;
+  }
+  @media (max-width: 992px) {
+    bottom: 10%;
+    left: 0vw;
+  }
+  @media (min-width: 992px) {
+    bottom: 10%;
+    left: 0vw;
+  }
+  @media (min-width: 1100px) {
+    bottom: 10%;
+    left: 0;
+  }
+  @media (min-width: 1200px) {
+    bottom: 10%;
+    left: 0vw;
+  }
+  @media (min-width: 1300px) {
+    bottom: 10%;
+    left: 0vw;
+  }
+  @media (min-width: 1440px) {
+    bottom: 10%;
+    left: 15vw;
+  }
+  @media (min-width: 1920px) {
+    bottom: 10%;
+    left: 15vw;
+  }
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0rem;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0.618rem 0 0rem;
+}
+
+.container {
+  display: grid;
+  position: relative;
+  justify-items: center;
+  align-items: center;
+}
+
+.overlay {
+  height: 100%;
+  width: 100vw;
+  background: black;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.reading {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  grid-gap: 0.618rem;
+  margin: 2.618rem 0 0 0;
+}
+
+.anchor {
+  font-size: var(--details);
+  font-weight: 700;
+  color: #ff7f00;
+}
+
+.buttons {
+  display: grid;
+  grid-gap: 0.618rem;
+  grid-auto-flow: column;
+  align-items: end;
+  justify-content: start;
+  @include screen(small) {
+    grid-auto-flow: dense;
+  }
+}
+
+.orcamento {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Montserrat;
+  width: auto;
+  padding: 0rem 1.218rem;
+  margin: 1rem 0 0 0;
+  height: 2rem;
+  border-radius: 0.618rem;
+  background-color: #f58220;
+  color: #fff;
+  font-weight: 500;
+  font-size: var(--details);
+  letter-spacing: -0.5px;
+  cursor: pointer;
+}
+.consorcio {
+  height: 2rem;
+  display: inline-flex;
+  font-family: Montserrat;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  background-color: #7f7f7f;
+  padding: 0rem 1.218rem;
+  height: 2rem;
+  font-weight: 500;
+  font-size: 14px !important;
+  border-radius: 0.618rem;
+  transition: 0.13s all ease-in-out;
+}
