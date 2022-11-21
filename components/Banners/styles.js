@@ -17,27 +17,49 @@ export const InfosBanner = styled.div`
   }
 `
 export const TitleBanner = styled.h1`
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 0.218rem;
   text-align: center;
+  transition: all 0.3s ease-in-out;
   @media (max-width: 680px) {
-    font-size: 32px;
+    font-size: 30px;
     line-height: 1.1;
     margin-bottom: 0.418rem;
   }
+  @media (max-width: 480px) {
+    font-size: 24px;
+    line-height: 1.1;
+    margin-bottom: 0.618rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 42px;
+    line-height: 1.1;
+    margin-bottom: 0.618rem;
+  }
 `
 export const SubtitleBanner = styled.p`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 0.618rem;
   margin-top: 0;
   text-align: center;
+  transition: all 0.3s ease-in-out;
   @media (max-width: 680px) {
     font-size: 16px;
+    line-height: 1.1;
+    margin-bottom: 0.418rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+  @media (min-width: 1024px) {
+    font-size: 22px;
     line-height: 1.2;
+    margin-bottom: 0.618rem;
   }
 `
 export const ButtonBanner = styled.button`
@@ -55,6 +77,7 @@ export const ButtonBanner = styled.button`
   font-size: 14px;
   letter-spacing: -0.5px;
   cursor: pointer;
+  margin: 0.418rem;
 `
 export const OverlayBanner = styled.div`
   height: 100%;
@@ -72,6 +95,8 @@ export const ContainerAnimated = styled.div`
   padding: 2rem 28rem 2rem 28rem;
   background-color: rgba(255, 127, 0, 0.04);
   overflow: hidden;
+  height: 6.718rem;
+  align-content: center;
   @media (max-width: 680px) {
     grid-template-columns: 1fr 350px 1fr;
     justify-content: center;
@@ -117,5 +142,25 @@ export const TitleAnimated = styled.h1`
   color: #0d4b26;
   strong {
     color: #f58220;
+  }
+`
+
+export const ImageBanner = styled.img`
+  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  @media (max-width: 680px) {
+    height: 40vh;
+  }
+  @media (min-width: 680px) {
+    height: 45vh;
+  }
+  @media (min-width: 992px) {
+    height: 100%;
+  }
+  @media (min-width: 1200px) {
+    height: 100%;
   }
 `
