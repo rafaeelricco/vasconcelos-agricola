@@ -8,6 +8,7 @@ import {
   ButtonBanner,
   ContainerAnimated,
   ContainerBanner,
+  ImageBanner,
   InfosBanner,
   OverlayBanner,
   SubtitleBanner,
@@ -21,6 +22,7 @@ export default function Banner({ data }) {
   const autoplay = useRef(Autoplay({ delay: 4000 }))
   const banners = data
   const bannersReverse = banners.reverse()
+  const onlyBanner3 = [{ ...bannersReverse[0] }]
 
   return (
     <>
@@ -40,19 +42,7 @@ export default function Banner({ data }) {
                 </Link>
               </InfosBanner>
               <OverlayBanner>
-                <img
-                  style={{
-                    objectFit: 'cover',
-                    width: '100%',
-                    height: '50vh',
-                    display: 'block',
-                    opacity: '0.4',
-                    maxHeight: '100%',
-                    maxWidth: '100%'
-                  }}
-                  src={banner.image}
-                  alt={banner.title}
-                />
+                <ImageBanner src={banner.image} alt={banner.title} />
               </OverlayBanner>
             </ContainerBanner>
           </Carousel.Slide>
