@@ -95,7 +95,7 @@ export const ContainerAnimated = styled.div`
   padding: 2rem 28rem 2rem 28rem;
   background-color: rgba(255, 127, 0, 0.04);
   overflow: hidden;
-  height: 6.718rem;
+  height: 6rem;
   align-content: center;
   @media (max-width: 680px) {
     grid-template-columns: 1fr 350px 1fr;
