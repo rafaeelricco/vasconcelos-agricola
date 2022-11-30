@@ -1,5 +1,5 @@
-import Form from '../Form/form'
 import { useRouter } from 'next/router'
+import Form from '../Form/form'
 import consortium from './consortium.module.scss'
 
 export default function Consortium() {
@@ -12,8 +12,7 @@ export default function Consortium() {
         className={consortium.subtitle}
         style={{
           marginBottom: '2.618rem'
-        }}
-      >
+        }}>
         Converse com nossos especialistas e atinja suas conquistas! Preencha o
         formulário abaixo para receber um contato dos nossos especialistas do
         Consórcio.

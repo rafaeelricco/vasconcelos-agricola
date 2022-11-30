@@ -1,3 +1,4 @@
+// provide the data for the options in select fields
 export const options = [
   'Adubadoras',
   'Lançamentos',

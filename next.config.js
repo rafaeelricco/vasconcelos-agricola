@@ -13,10 +13,7 @@ const nextConfig = {
     return config
   },
   images: {
-    domains: [
-      `${process.env.NEXT_PUBLIC_HOST_DOMAIN}`,
-      `${process.env.NEXT_PUBLIC_S3_DOMAIN}`
-    ]
+    domains: [`${process.env.NEXT_PUBLIC_HOST_DOMAIN}`]
   },
   compiler: {
     styledComponents: true

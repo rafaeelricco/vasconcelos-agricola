@@ -1,23 +1,22 @@
 /* eslint-disable react/no-children-prop */
-import { Hamburguer } from './burger'
+import { Button, Container } from '@mantine/core'
+import Link from 'next/link'
 import { FaWhatsapp } from 'react-icons/fa'
+import Atendimento from '../../assets/icons/header/atendimento.svg'
+import Location from '../../assets/icons/header/endereco.svg'
+import ActiveLink from '../Link/link'
+import { Hamburguer } from './burger'
 import {
-  Anchor,
+  BackgroundContainer,
   ContactContainer,
   ContainerButtons,
   ContainerHamburguer,
-  BackgroundContainer,
   HeaderContainer,
   LayoutContainer,
   LocationContainer,
   Text
 } from './style'
-import { Button, Container } from '@mantine/core'
 import Logo from '/assets/icons/logo/logo-vasconcelos.svg'
-import ActiveLink from '../Link/link'
-import Link from 'next/link'
-import Location from '../../assets/icons/header/endereco.svg'
-import Atendimento from '../../assets/icons/header/atendimento.svg'
 
 export default function Header() {
   return (
@@ -28,8 +27,7 @@ export default function Header() {
             <a
               href="https://www.google.com.br/maps/place/Vasconcelos+Agr%C3%ADcola/@-30.0154253,-52.9202561,17z/data=!3m1!4b1!4m5!3m4!1s0x95035911e93e9b21:0x9f3499701545e96a!8m2!3d-30.0154749!4d-52.9181154?shorturl=1"
               target={'_blank'}
-              rel="noreferrer"
-            >
+              rel="noreferrer">
               <LocationContainer>
                 <Location fill="#ff7f00" width={20} />
                 <Text>R. Marcelo Gama, 3250 - Cachoeira do Sul, RS</Text>
@@ -95,30 +93,26 @@ export default function Header() {
             <a
               href="https://api.whatsapp.com/send?phone=5551999614425"
               target={'_blank'}
-              rel="noreferrer"
-            >
+              rel="noreferrer">
               <Button
                 className={'comercial'}
                 variant={'light'}
                 color={'green'}
                 radius={'md'}
-                leftIcon={<FaWhatsapp size={'21'} />}
-              >
+                leftIcon={<FaWhatsapp size={'21'} />}>
                 Comercial
               </Button>
             </a>
             <a
               href="https://api.whatsapp.com/send?phone=5551996954636"
               target={'_blank'}
-              rel="noreferrer"
-            >
+              rel="noreferrer">
               <Button
                 variant={'light'}
                 color={'green'}
                 radius={'md'}
                 className={'pecas'}
-                leftIcon={<FaWhatsapp size={'21'} />}
-              >
+                leftIcon={<FaWhatsapp size={'21'} />}>
                 Peças e Assist. Técnica
               </Button>
             </a>

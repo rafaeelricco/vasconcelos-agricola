@@ -17,16 +17,17 @@ principais produtos que a Vasconcelos Agrícola oferece, junto a uma experiênci
 intuitiva e fluida.
 
 - [Repositório da API](https://github.com/rafaeelricco/vasconcelos-api)
-- [Demonstração do Projeto](https://vasconcelos-agricola-beta.vercel.app/)
+- [Demonstração do Projeto](https://vasconcelosagricola.com.br)
 - [Demonstração da API](https://vasconcelos-api.herokuapp.com/)
 - [Projeto no Figma](https://www.figma.com/file/PVVF6C08RR3XaIYs3KY5bL/Vasconcelos?node-id=0%3A1)
 
 ## Principais Funcionalidades
 
 - CMS (Content Management System)
-- Painel Administrativos para Gerenciamento de Produtos
+- Painel Administrativos
 - Site Totalmente Responsivo
 - Formulários para consórcio
+- Suporte a multiplos usuários
 - Rotas Autenticadas
 - Sistema de Listagem
 

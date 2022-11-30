@@ -1,4 +1,4 @@
-/* Make clicks pass-through */
+/* progress bar styles */
 #nprogress {
   pointer-events: none;
 }

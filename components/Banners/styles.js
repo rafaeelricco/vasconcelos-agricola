@@ -137,11 +137,14 @@ export const ContainerAnimated = styled.div`
   }
 `
 export const TitleAnimated = styled.h1`
-  font-size: 2.618rem;
+  font-size: 2.6418rem;
   font-weight: 700;
   color: #0d4b26;
   strong {
     color: #f58220;
+  }
+  @media (max-width: 680px) {
+    font-size: 2rem;
   }
 `
 

@@ -44,11 +44,7 @@ export default function Home({ banners, featureds }) {
   )
 }
 
-export async function getServerSideProps({ req, res }) {
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=59'
-  )
+export async function getServerSideProps() {
   const banners = await fetch(`${process.env.NEXT_PUBLIC_API_BANNERS}`)
   const bannersJson = await banners.json()
 

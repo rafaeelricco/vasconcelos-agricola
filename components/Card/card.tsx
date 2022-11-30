@@ -11,8 +11,7 @@ export default function Card({ path, img, title, id }) {
           cursor: 'pointer',
           textDecoration: 'none',
           color: 'inherit'
-        }}
-      >
+        }}>
         <ContainerCard>
           <InfoCard>
             <ImageCard

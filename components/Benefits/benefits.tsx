@@ -1,11 +1,11 @@
+import { Container } from '@mantine/core'
+import benefits from './benefits.module.scss'
 import Card from './cardBenefits'
+import agilidadeAtendimento from '/assets/icons/benefits/agilidade-atendimento.png'
+import assistenciaLojaCampo from '/assets/icons/benefits/assistencia.png'
+import atendimentoEspecializado from '/assets/icons/benefits/atendimento-especializado.png'
 import equipeTecnica from '/assets/icons/benefits/equipe-especializada.png'
 import produtosOriginais from '/assets/icons/benefits/originais-jacto.png'
-import atendimentoEspecializado from '/assets/icons/benefits/atendimento-especializado.png'
-import assistenciaLojaCampo from '/assets/icons/benefits/assistencia.png'
-import agilidadeAtendimento from '/assets/icons/benefits/agilidade-atendimento.png'
-import benefits from './benefits.module.scss'
-import { Container } from '@mantine/core'
 
 export default function Benefits() {
   return (

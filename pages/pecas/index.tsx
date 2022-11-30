@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 import layout from '../../assets/scss/products.module.scss'
 import { Footer } from '../../components/Footer/footer'
 import Header from '../../components/Header/header'
-
 const { options } = require('./categoria/[categoria]')
 
 export default function Produtos({ parts }) {

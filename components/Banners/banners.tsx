@@ -20,9 +20,7 @@ import LogoVasconcelos from '/assets/icons/logo/logo-vasconcelos.svg'
 
 export default function Banner({ data }) {
   const autoplay = useRef(Autoplay({ delay: 4000 }))
-  const banners = data
-  const bannersReverse = banners.reverse()
-  const onlyBanner3 = [{ ...bannersReverse[0] }]
+  const banners = [...data].reverse()
 
   return (
     <>
@@ -31,13 +29,13 @@ export default function Banner({ data }) {
         plugins={[autoplay.current]}
         onMouseEnter={autoplay.current.stop}
         onMouseLeave={autoplay.current.reset}>
-        {bannersReverse?.map((banner: Banners) => (
+        {banners?.map((banner: Banners) => (
           <Carousel.Slide key={banner.id}>
             <ContainerBanner>
               <InfosBanner>
                 <TitleBanner>{banner.title}</TitleBanner>
-                <SubtitleBanner>{banner?.description}</SubtitleBanner>
-                <Link href={banner?.link}>
+                <SubtitleBanner>{banner.description}</SubtitleBanner>
+                <Link href={banner.link}>
                   <ButtonBanner>Saiba mais</ButtonBanner>
                 </Link>
               </InfosBanner>

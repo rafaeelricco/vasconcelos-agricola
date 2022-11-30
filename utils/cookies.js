@@ -1,3 +1,4 @@
+// cookies accept component
 import CookieConsent from 'react-cookie-consent'
 import styled from 'styled-components'
 
@@ -42,8 +43,7 @@ export default function AcceptCookies() {
         declineButtonClasses="button-decline"
         flipButtons={true}
         expires={150}
-        debug={false}
-      >
+        debug={false}>
         <TitleCookie>Valorizamos sua privacidade</TitleCookie>
         <TextCookie>
           Este site utiliza cookies para lhe proporcionar uma melhor experiência

@@ -5,10 +5,8 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import layout from '../../../assets/scss/products.module.scss'
 import card from '../../../assets/scss/produtos/card-product.module.scss'
-
-import Header from '../../../components/Header/header'
-
 import { Footer } from '../../../components/Footer/footer'
+import Header from '../../../components/Header/header'
 import { Parts } from '../../../typings'
 
 interface Path {

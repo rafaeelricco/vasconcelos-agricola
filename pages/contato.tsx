@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { Badge, Button, Container } from '@mantine/core'
-import { useRouter } from 'next/router'
 import Script from 'next/script'
-import { useEffect } from 'react'
 import { FaWhatsapp } from 'react-icons/fa'
 import styled from 'styled-components'
 import { Footer } from '../components/Footer/footer'
 import Form from '../components/Form/form'
 import Header from '../components/Header/header'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 import * as fbq from '../lib/fpixel'
 
 const ContainerItem = styled.div`

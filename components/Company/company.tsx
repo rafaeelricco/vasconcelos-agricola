@@ -1,11 +1,11 @@
-import { ChevronRight } from 'tabler-icons-react'
 import { Carousel } from '@mantine/carousel'
-import company from './company.module.scss'
+import Image from 'next/image'
 import Link from 'next/link'
+import { ChevronRight } from 'tabler-icons-react'
 import empresa1 from '../../public/imagens/Artboard 1.webp'
 import empresa2 from '../../public/imagens/Artboard 2.webp'
 import empresa3 from '../../public/imagens/Artboard 3.webp'
-import Image from 'next/image'
+import company from './company.module.scss'
 
 export default function Company() {
   return (
@@ -16,13 +16,11 @@ export default function Company() {
           slideSize="100%"
           align="start"
           slideGap={'sm'}
-          loop
-        >
+          loop>
           <Carousel.Slide
             style={{
               display: 'grid'
-            }}
-          >
+            }}>
             <Image
               style={{
                 borderRadius: '1rem'
@@ -35,8 +33,7 @@ export default function Company() {
           <Carousel.Slide
             style={{
               display: 'grid'
-            }}
-          >
+            }}>
             <Image
               style={{
                 borderRadius: '1rem'
@@ -48,8 +45,7 @@ export default function Company() {
           <Carousel.Slide
             style={{
               display: 'grid'
-            }}
-          >
+            }}>
             <Image
               style={{
                 borderRadius: '1rem'

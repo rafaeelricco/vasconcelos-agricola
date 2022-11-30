@@ -1,14 +1,11 @@
-import React, { useRef } from 'react'
-import { FaWhatsapp } from 'react-icons/fa'
-import { Products } from '../../typings'
-import { Send } from 'tabler-icons-react'
-import { Checkbox, Input, LoadingOverlay } from '@mantine/core'
-import { IconAt } from '@tabler/icons'
 import emailjs from '@emailjs/browser'
-import consortium from '../Consortium/consortium.module.scss'
+import { Input } from '@mantine/core'
 import axios from 'axios'
 import FormData from 'form-data'
-import Link from 'next/link'
+import React, { useRef } from 'react'
+import { FaWhatsapp } from 'react-icons/fa'
+import { Send } from 'tabler-icons-react'
+import consortium from '../Consortium/consortium.module.scss'
 
 export default function Form({ product_req }) {
   const form = useRef()
@@ -143,8 +140,7 @@ export default function Form({ product_req }) {
               style={{
                 display: 'flex',
                 gap: '0.5rem'
-              }}
-            >
+              }}>
               <input
                 type="checkbox"
                 name="accept_contact"
@@ -160,8 +156,7 @@ export default function Form({ product_req }) {
                 margin: '8px 0 8px 0'
               }}
               type="submit"
-              className={consortium.send}
-            >
+              className={consortium.send}>
               <Send size={22} />
               Enviar
             </button>
@@ -170,8 +165,7 @@ export default function Form({ product_req }) {
               style={{
                 margin: '8px 0 8px 0'
               }}
-              className={consortium.whatsApp}
-            >
+              className={consortium.whatsApp}>
               <a
                 href="https://api.whatsapp.com/send/?phone=5551999614425&text&type=phone_number&app_absent=0"
                 target={'_blank'}
@@ -182,8 +176,7 @@ export default function Form({ product_req }) {
                   gridAutoFlow: 'column',
                   gridGap: '8px',
                   alignItems: 'center'
-                }}
-              >
+                }}>
                 <FaWhatsapp size={22} />
                 Fale conosco
               </a>

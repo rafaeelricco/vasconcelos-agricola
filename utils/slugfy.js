@@ -1,3 +1,4 @@
+// function to slugfy a string
 export const slugfy = (value) => {
   const str = value
     .toLowerCase()

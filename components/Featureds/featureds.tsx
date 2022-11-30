@@ -1,6 +1,8 @@
 import { Carousel } from '@mantine/carousel'
+import Link from 'next/link'
 import { ArrowRight } from 'tabler-icons-react'
 import { Featured } from '../../typings'
+import Product from '../Products/product'
 import {
   ButtonTitle,
   ContainerProducts,
@@ -9,8 +11,6 @@ import {
   Subtitle,
   Title
 } from './style'
-import Link from 'next/link'
-import Product from '../Products/product'
 
 export default function Featureds({ data }) {
   const f = data
@@ -42,8 +42,7 @@ export default function Featureds({ data }) {
             { maxWidth: 'sm', slideSize: '100%', slideGap: 0 }
           ]}
           loop
-          align="start"
-        >
+          align="start">
           {f?.map((item: Featured) => (
             <Carousel.Slide key={item.id}>
               <Slider>

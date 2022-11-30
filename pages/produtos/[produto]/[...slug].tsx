@@ -6,7 +6,6 @@ import { useRouter } from 'next/router'
 import Script from 'next/script'
 import { useEffect, useState } from 'react'
 import { FaList } from 'react-icons/fa'
-import html from 'react-inner-html'
 import styled from 'styled-components'
 import banner from '../../../assets/scss/produtos/banner-produto.module.scss'
 import styles from '../../../assets/scss/produtos/product-details.module.scss'
@@ -206,7 +205,9 @@ export default function ProductPage({ product }: Props) {
           <div key={product.id}>
             <div
               className={styles.details}
-              {...new html(product.description)}
+              dangerouslySetInnerHTML={{
+                __html: product.description
+              }}
             />
           </div>
         ))}
