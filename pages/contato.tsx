@@ -1,20 +1,20 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { Badge, Button, Container } from '@mantine/core'
+import { useRouter } from 'next/router'
 import Script from 'next/script'
+import { useEffect } from 'react'
 import { FaWhatsapp } from 'react-icons/fa'
 import styled from 'styled-components'
 import { Footer } from '../components/Footer/footer'
 import Form from '../components/Form/form'
 import Header from '../components/Header/header'
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
 import * as fbq from '../lib/fpixel'
 
 const ContainerItem = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
-  aling-content: center;
+  align-content: center;
   position: relative;
   @media (max-width: 768px) {
     justify-items: center;
@@ -174,12 +174,14 @@ export default function Contato({ products }: { products: any }) {
           <a
             href="https://api.whatsapp.com/send?phone=5551999614425"
             target={'_blank'}
-            rel="noreferrer">
+            rel="noreferrer"
+          >
             <Button
               radius={'md'}
               variant={'light'}
               color={'green'}
-              leftIcon={<FaWhatsapp size={18} />}>
+              leftIcon={<FaWhatsapp size={18} />}
+            >
               Fale com um vendedor
             </Button>
           </a>
@@ -208,7 +210,8 @@ export default function Contato({ products }: { products: any }) {
                     <Badge
                       variant="gradient"
                       size={'sm'}
-                      gradient={{ from: '#ff7700', to: '#f58220' }}>
+                      gradient={{ from: '#ff7700', to: '#f58220' }}
+                    >
                       Lançamento
                     </Badge>
                     <h2>{item.name}</h2>

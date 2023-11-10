@@ -69,7 +69,6 @@ export default function Termo() {
       </Link>
     </tr>
   ))
-
   return (
     <>
       <Header />

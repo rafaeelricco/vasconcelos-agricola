@@ -102,7 +102,6 @@ const InfosPart = styled.div`
     justify-items: start;
     grid-gap: 0.618rem;
   }
-  ,
   @media (max-width: 400px) {
     justify-items: start;
     grid-gap: 0.618rem;
@@ -203,7 +202,8 @@ export default function ProductPage({ useds }: { useds: Used[] }) {
                 autoplay={{
                   delay: 2500,
                   disableOnInteraction: false
-                }}>
+                }}
+              >
                 {part.images.map((image) => (
                   <SwiperSlide key={image}>
                     <Img src={image.image_url} alt={part.name} />
@@ -232,7 +232,8 @@ export default function ProductPage({ useds }: { useds: Used[] }) {
                       href="https://api.whatsapp.com/send/?phone=5551999614425&text&type=phone_number&app_absent=0"
                       target={'_blank'}
                       rel="noreferrer"
-                      style={{ color: '#fff' }}>
+                      style={{ color: '#fff' }}
+                    >
                       Pedir agora
                     </a>
                   </ButtonWhatsApp>
@@ -242,7 +243,8 @@ export default function ProductPage({ useds }: { useds: Used[] }) {
                     href="https://api.whatsapp.com/send/?phone=5551999614425&text&type=phone_number&app_absent=0"
                     target={'_blank'}
                     rel="noreferrer"
-                    style={{ color: '#fff' }}>
+                    style={{ color: '#fff' }}
+                  >
                     <HelpTitle>Ficou com dúvida sobre o produto?</HelpTitle>
                     <HelpSubtitle>A gente pode te ajudar :)</HelpSubtitle>
                   </a>
@@ -267,7 +269,8 @@ export default function ProductPage({ useds }: { useds: Used[] }) {
                       }}
                       color="#FF7F00"
                     />
-                  }>
+                  }
+                >
                   Descrição
                 </Tabs.Tab>
               </Tabs.List>
@@ -294,7 +297,8 @@ export default function ProductPage({ useds }: { useds: Used[] }) {
               { maxWidth: 'sm', slideSize: '100%', slideGap: 0 }
             ]}
             loop
-            align="start">
+            align="start"
+          >
             {random?.map((r: any) => (
               <Carousel.Slide key={r.id}>
                 <Link
@@ -303,13 +307,15 @@ export default function ProductPage({ useds }: { useds: Used[] }) {
                   style={{
                     cursor: 'pointer',
                     textDecoration: 'none'
-                  }}>
+                  }}
+                >
                   <div className={slider.container}>
                     <div
                       className="container-product"
                       style={{
                         cursor: 'pointer'
-                      }}>
+                      }}
+                    >
                       <div className="product-infos">
                         <img
                           src={r.images.map((item) => item.image_url)}
@@ -325,7 +331,8 @@ export default function ProductPage({ useds }: { useds: Used[] }) {
                             style={{
                               fontSize: '1.118rem'
                             }}
-                            className="title-card-product">
+                            className="title-card-product"
+                          >
                             {r.name}
                           </h2>
                         </div>
