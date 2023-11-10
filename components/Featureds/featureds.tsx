@@ -42,7 +42,8 @@ export default function Featureds({ data }) {
             { maxWidth: 'sm', slideSize: '100%', slideGap: 0 }
           ]}
           loop
-          align="start">
+          align="start"
+        >
           {f?.map((item: Featured) => (
             <Carousel.Slide key={item.id}>
               <Slider>

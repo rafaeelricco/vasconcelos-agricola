@@ -12,10 +12,9 @@ export default function Card({ title, description, alt, src }: Props) {
   return (
     <div className={card.layout}>
       <Image
-        className={title}
+        style={{ maxWidth: '54px', maxHeight: '54px' }}
         width={54}
         height={54}
-        layout="fixed"
         src={src}
         alt={alt}
       />

@@ -149,18 +149,20 @@ export default function ProductPage({ product }: Props) {
                 <div className={banner.buttons}>
                   <button
                     className={banner.orcamento}
-                    onClick={() => setOpened(true)}>
+                    onClick={() => setOpened(true)}
+                  >
                     Solicitar orçamento
                   </button>
                   <button className={banner.consorcio}>
-                    <Link href="/consorcio">
-                      <a
-                        style={{
-                          color: '#fff',
-                          fontSize: '14px'
-                        }}>
-                        Consórico Jacto
-                      </a>
+                    <Link
+                      href="/consorcio"
+                      style={{
+                        textDecoration: 'none',
+                        color: '#fff',
+                        fontSize: '14px'
+                      }}
+                    >
+                      Consórico Jacto
                     </Link>
                   </button>
                 </div>
@@ -179,7 +181,8 @@ export default function ProductPage({ product }: Props) {
                     }}
                     href={`${flyerProduct}`}
                     target="_blank"
-                    rel="noreferrer">
+                    rel="noreferrer"
+                  >
                     Especificações do produto
                   </a>
                 </div>
@@ -216,7 +219,8 @@ export default function ProductPage({ product }: Props) {
             marginBottom: '50px'
           }}
           height="100%"
-          withIndicators>
+          withIndicators
+        >
           {bannersProduct.map((b) => (
             <Carousel.Slide key={b.id}>
               <Img className={banner.images} src={b.image_file} alt={b.title} />
@@ -232,7 +236,8 @@ export default function ProductPage({ product }: Props) {
               marginBottom: '40px',
               display: `${removeVideo(video)}`
             }}
-            src={`https://www.youtube.com/embed/${video}`}></iframe>
+            src={`https://www.youtube.com/embed/${video}`}
+          ></iframe>
         </Youtube>
       </Container>
       <Footer />

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 interface Props {
@@ -17,9 +18,9 @@ function ActiveLink({ href, children, classForComponent }: Props) {
   }
 
   return (
-    <a className={classForComponent} href={href} style={style}>
+    <Link className={classForComponent} href={href} style={style}>
       {children}
-    </a>
+    </Link>
   )
 }
 

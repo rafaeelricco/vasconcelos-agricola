@@ -45,7 +45,8 @@ export default function Termo() {
       <td
         style={{
           fontSize: '1rem'
-        }}>
+        }}
+      >
         {element.name}
       </td>
       <td>{element.size}</td>
@@ -56,11 +57,13 @@ export default function Termo() {
         }}
         href={element.link}
         target={'_blank'}
-        rel="noreferrer">
+        rel="noreferrer"
+      >
         <td
           style={{
             cursor: 'pointer'
-          }}>
+          }}
+        >
           {element.download}
         </td>
       </Link>
@@ -75,6 +78,7 @@ export default function Termo() {
         width={1920}
         height={300}
         quality={50}
+        alt="Termo de Garantia"
       />
       <Container size={'xl'}>
         <Title>Termos de Garantia</Title>
@@ -83,7 +87,8 @@ export default function Termo() {
             margin: '0 0 2rem 0'
           }}
           horizontalSpacing="xl"
-          verticalSpacing="lg">
+          verticalSpacing="lg"
+        >
           <tbody>{rows}</tbody>
         </Table>
       </Container>

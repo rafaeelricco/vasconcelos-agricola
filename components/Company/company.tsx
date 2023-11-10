@@ -16,11 +16,13 @@ export default function Company() {
           slideSize="100%"
           align="start"
           slideGap={'sm'}
-          loop>
+          loop
+        >
           <Carousel.Slide
             style={{
               display: 'grid'
-            }}>
+            }}
+          >
             <Image
               style={{
                 borderRadius: '1rem'
@@ -33,7 +35,8 @@ export default function Company() {
           <Carousel.Slide
             style={{
               display: 'grid'
-            }}>
+            }}
+          >
             <Image
               style={{
                 borderRadius: '1rem'
@@ -45,7 +48,8 @@ export default function Company() {
           <Carousel.Slide
             style={{
               display: 'grid'
-            }}>
+            }}
+          >
             <Image
               style={{
                 borderRadius: '1rem'
@@ -66,9 +70,7 @@ export default function Company() {
             Vasconcelos...
           </p>
           <div className={company.reading}>
-            <Link href="/empresa">
-              <a className={company.anchor}>Continuar lendo</a>
-            </Link>
+            <Link href="/empresa">Continuar lendo</Link>
             <ChevronRight color="#FF7F00" />
           </div>
         </div>
