@@ -24,9 +24,7 @@ export default function Company() {
             }}
           >
             <Image
-              style={{
-                borderRadius: '1rem'
-              }}
+              style={{ borderRadius: '1rem' }}
               src={empresa1}
               layout="intrinsic"
               alt="Foto da empresa"

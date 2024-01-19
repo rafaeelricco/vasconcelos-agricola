@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
 import { MantineProvider } from '@mantine/core'
-import { SSRProvider } from '@react-aria/ssr'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import NProgress from 'nprogress'
@@ -68,11 +67,9 @@ export default function App(props: Props) {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <SSRProvider>
-        <MantineProvider>
-          <Component {...pageProps} />
-        </MantineProvider>
-      </SSRProvider>
+      <MantineProvider>
+        <Component {...pageProps} />
+      </MantineProvider>
     </>
   )
 }

@@ -1,13 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
 import { Container } from '@mantine/core'
+import dynamic from 'next/dynamic'
 import Script from 'next/script'
 import Banner from '../components/Banners/banners'
-import Benefits from '../components/Benefits/benefits'
 import Company from '../components/Company/company'
 import Featureds from '../components/Featureds/featureds'
-import { Footer } from '../components/Footer/footer'
 import Header from '../components/Header/header'
 import AcceptCookies from '../utils/cookies'
+
+const FooterDynamic = dynamic(
+  () => import('../components/Footer/footer').then((mod) => mod.Footer),
+  { ssr: false }
+)
+
+const BenefitsDynamic = dynamic(
+  () => import('../components/Benefits/benefits').then((mod) => mod.default),
+  { ssr: false }
+)
 
 export default function Home({ banners, featureds }) {
   return (
@@ -18,9 +27,9 @@ export default function Home({ banners, featureds }) {
       <Container size={'xl'}>
         <Featureds data={featureds} />
         <Company />
-        <Benefits />
+        <BenefitsDynamic />
       </Container>
-      <Footer />
+      <FooterDynamic />
       <Script
         id="fb-pixel"
         strategy="afterInteractive"

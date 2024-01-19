@@ -15,7 +15,7 @@ import {
   TitleAnimated,
   TitleBanner
 } from './styles'
-import LogoJacto from '/assets/icons/logo/jacto-deafult.svg'
+import LogoJacto from '/assets/icons/logo/jacto-new.svg'
 import LogoVasconcelos from '/assets/icons/logo/logo-vasconcelos.svg'
 
 export default function Banner({ data }) {
@@ -28,7 +28,8 @@ export default function Banner({ data }) {
         withIndicators
         plugins={[autoplay.current]}
         onMouseEnter={autoplay.current.stop}
-        onMouseLeave={autoplay.current.reset}>
+        onMouseLeave={autoplay.current.reset}
+      >
         {banners?.map((banner: Banners) => (
           <Carousel.Slide key={banner.id}>
             <ContainerBanner>
@@ -55,7 +56,8 @@ export default function Banner({ data }) {
           <TitleAnimated
             style={{
               color: '#0d4b26'
-            }}>
+            }}
+          >
             Somos <strong>revenda master </strong>
           </TitleAnimated>
         </div>

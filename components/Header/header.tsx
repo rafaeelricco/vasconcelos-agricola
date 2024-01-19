@@ -31,7 +31,7 @@ export default function Header() {
             >
               <LocationContainer>
                 <Location fill="#ff7f00" width={20} />
-                <Text>R. Marcelo Gama, 3250 - Cachoeira do Sul, RS</Text>
+                <Text>R. Marcelo Gama, 3280 - Cachoeira do Sul, RS</Text>
               </LocationContainer>
             </a>
             <a href="tel:+555137233292" target={'_blank'} rel="noreferrer">

@@ -1,8 +1,6 @@
 import { Button, Container } from '@mantine/core'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
-import meridia from 'public/consortium/meridia.webp'
 import { useEffect } from 'react'
 import Consortium from '../components/Consortium/consortium'
 import { Footer } from '../components/Footer/footer'
@@ -46,13 +44,14 @@ export default function Consorcio() {
             height: '35px',
             marginBottom: '1rem',
             zIndex: '1'
-          }}>
+          }}
+        >
           Semeando histórias de sucesso
         </Button>
-
-        <Image
-          className={consortium.image}
-          src={meridia}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className={consortium.meridia}
+          src={'/consortium/meridia.webp'}
           alt="Plantadeira Merídia 200"
         />
         <h2 className={consortium.subtitle}>
