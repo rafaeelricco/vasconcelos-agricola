@@ -2,13 +2,12 @@
 import { Badge, Container, Select } from '@mantine/core'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
 import layout from '../../../assets/scss/products.module.scss'
 import card from '../../../assets/scss/produtos/card-product.module.scss'
 import { Footer } from '../../../components/Footer/footer'
 import Header from '../../../components/Header/header'
-import * as fbq from '../../../lib/fpixel'
 import { Products } from '../../../typings'
 import { options, parts } from '../../../utils/options'
 import { slugfy } from '../../../utils/slugfy'
@@ -32,19 +31,6 @@ export default function Category({
   const format =
     path.toString().split('-').join(' ').charAt(0).toUpperCase() +
     path.toString().split('-').join(' ').slice(1)
-
-  useEffect(() => {
-    fbq.pageview()
-
-    const handleRouteChange = () => {
-      fbq.pageview()
-    }
-
-    router.events.on('routeChangeComplete', handleRouteChange)
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
 
   const [state, setState] = useState<Products[]>(init)
 
@@ -242,12 +228,14 @@ export default function Category({
                 color: 'black'
               }}
               href={link(item)}
-              key={item.id}>
+              key={item.id}
+            >
               <div
                 style={{
                   cursor: 'pointer'
                 }}
-                className={card.container}>
+                className={card.container}
+              >
                 <BadgesContainer>
                   <Badge
                     style={{
@@ -255,7 +243,8 @@ export default function Category({
                     }}
                     radius={'md'}
                     color={'orange'}
-                    size={'md'}>
+                    size={'md'}
+                  >
                     {preLaunch(item.slug)}
                   </Badge>
                   <Badge
@@ -264,7 +253,8 @@ export default function Category({
                     }}
                     radius={'md'}
                     color={'green'}
-                    size={'md'}>
+                    size={'md'}
+                  >
                     {item.disponibility == 2
                       ? 'Pronta entrega'
                       : 'Indisponível'}

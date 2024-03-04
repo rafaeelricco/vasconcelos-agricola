@@ -4,7 +4,7 @@ import { Container, Modal } from '@mantine/core'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { FaList } from 'react-icons/fa'
 import styled from 'styled-components'
 import banner from '../../../assets/scss/produtos/banner-produto.module.scss'
@@ -13,7 +13,6 @@ import consortium from '../../../components/Consortium/consortium.module.scss'
 import { Footer } from '../../../components/Footer/footer'
 import Form from '../../../components/Form/form'
 import Header from '../../../components/Header/header'
-import * as fbq from '../../../lib/fpixel'
 import { Products } from '../../../typings'
 
 interface Props {
@@ -113,19 +112,6 @@ export default function ProductPage({ product }: Props) {
     return productNames.push(n.name)
   })
   const productsList = productNames
-
-  useEffect(() => {
-    fbq.pageview()
-
-    const handleRouteChange = () => {
-      fbq.pageview()
-    }
-
-    router.events.on('routeChangeComplete', handleRouteChange)
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
 
   return (
     <>

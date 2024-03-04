@@ -1,30 +1,15 @@
 import { Button, Container } from '@mantine/core'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
-import { useEffect } from 'react'
 import Consortium from '../components/Consortium/consortium'
 import { Footer } from '../components/Footer/footer'
 import Header from '../components/Header/header'
-import * as fbq from '../lib/fpixel'
 import Checked from '/assets/icons/consortium/checked.svg'
 import CreditCard from '/assets/icons/consortium/credit-card.svg'
 import consortium from '/assets/scss/consortium.module.scss'
 
 export default function Consorcio() {
   const router = useRouter()
-
-  useEffect(() => {
-    fbq.pageview()
-
-    const handleRouteChange = () => {
-      fbq.pageview()
-    }
-
-    router.events.on('routeChangeComplete', handleRouteChange)
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
 
   return (
     <>

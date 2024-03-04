@@ -2,13 +2,11 @@
 import { Badge, Button, Container } from '@mantine/core'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
-import { useEffect } from 'react'
 import { FaWhatsapp } from 'react-icons/fa'
 import styled from 'styled-components'
 import { Footer } from '../components/Footer/footer'
 import Form from '../components/Form/form'
 import Header from '../components/Header/header'
-import * as fbq from '../lib/fpixel'
 
 const ContainerItem = styled.div`
   display: grid;
@@ -147,19 +145,6 @@ const TitleForm = styled.div`
 
 export default function Contato({ products }: { products: any }) {
   const router = useRouter()
-
-  useEffect(() => {
-    fbq.pageview()
-
-    const handleRouteChange = () => {
-      fbq.pageview()
-    }
-
-    router.events.on('routeChangeComplete', handleRouteChange)
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
 
   const launch = products.filter((item) => item.launch === true).slice(0, 4)
 
