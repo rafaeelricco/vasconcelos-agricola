@@ -5,6 +5,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import NProgress from 'nprogress'
 import React, { useEffect } from 'react'
+import TagManager from 'react-gtm-module'
 import '../assets/css/nprogress.css'
 import '../assets/scss/banners-home.scss'
 import '/assets/scss/base-swiper.scss'
@@ -19,10 +20,9 @@ interface Props {
 }
 
 export default function App(props: Props) {
-  const { Component, pageProps } = props
   const router = useRouter()
-  const path = router.pathname
-  const slug = router.query
+
+  const { Component, pageProps } = props
 
   useEffect(() => {
     const handleStart = (url: string) => {
@@ -43,6 +43,10 @@ export default function App(props: Props) {
       router.events.off('routeChangeError', handleStop)
     }
   }, [router])
+
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-KBTCMFPM' })
+  }, [])
 
   return (
     <>
