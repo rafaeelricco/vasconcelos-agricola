@@ -1,33 +1,32 @@
-import { Carousel } from '@mantine/carousel'
-import { Container } from '@mantine/core'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
-import Script from 'next/script'
-import Card from '../components/Benefits/cardBenefits'
-import { Footer } from '../components/Footer/footer'
-import Header from '../components/Header/header'
-import empresa1 from '../public/imagens/Artboard 1.webp'
-import empresa2 from '../public/imagens/Artboard 2.webp'
-import empresa3 from '../public/imagens/Artboard 3.webp'
-import missao from '/assets/icons/company/missao.png'
-import valores from '/assets/icons/company/valores.png'
-import visao from '/assets/icons/company/visao.png'
-import company from '/assets/scss/company.module.scss'
+import { Carousel } from "@mantine/carousel";
+import { Container } from "@mantine/core";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import Card from "../components/Benefits/cardBenefits";
+import { Footer } from "../components/Footer/footer";
+import Header from "../components/Header/header";
+import empresa1 from "../public/imagens/Artboard 1.webp";
+import empresa2 from "../public/imagens/Artboard 2.webp";
+import empresa3 from "../public/imagens/Artboard 3.webp";
+import missao from "/assets/icons/company/missao.png";
+import valores from "/assets/icons/company/valores.png";
+import visao from "/assets/icons/company/visao.png";
+import company from "/assets/scss/company.module.scss";
 
 export default function Products() {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <>
       <Header />
-      <Container size={'xl'}>
+      <Container size={"xl"}>
         <div className={company.layout}>
           <Carousel
             slideSize="33.333333%"
             slideGap="md"
             withControls={false}
             breakpoints={[
-              { maxWidth: 'md', slideSize: '50%' },
-              { maxWidth: 'sm', slideSize: '100%', slideGap: 0 }
+              { maxWidth: "md", slideSize: "50%" },
+              { maxWidth: "sm", slideSize: "100%", slideGap: 0 },
             ]}
             loop
             align="start"
@@ -35,7 +34,7 @@ export default function Products() {
             <Carousel.Slide>
               <Image
                 style={{
-                  borderRadius: '1rem'
+                  borderRadius: "1rem",
                 }}
                 src={empresa1}
                 alt="missao"
@@ -44,7 +43,7 @@ export default function Products() {
             <Carousel.Slide>
               <Image
                 style={{
-                  borderRadius: '1rem'
+                  borderRadius: "1rem",
                 }}
                 src={empresa2}
                 alt="missao"
@@ -53,7 +52,7 @@ export default function Products() {
             <Carousel.Slide>
               <Image
                 style={{
-                  borderRadius: '1rem'
+                  borderRadius: "1rem",
                 }}
                 src={empresa3}
                 alt="missao"
@@ -100,7 +99,7 @@ export default function Products() {
         </div>
       </Container>
       <Footer />
-      <Script
+      {/* <Script
         id="fb-pixel"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
@@ -118,7 +117,7 @@ export default function Products() {
           fbq('trackCustom', 'Empresa');
           `
         }}
-      />
+      /> */}
     </>
-  )
+  );
 }

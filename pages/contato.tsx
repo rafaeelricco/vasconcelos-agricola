@@ -1,12 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { Badge, Button, Container } from '@mantine/core'
-import { useRouter } from 'next/router'
-import Script from 'next/script'
-import { FaWhatsapp } from 'react-icons/fa'
-import styled from 'styled-components'
-import { Footer } from '../components/Footer/footer'
-import Form from '../components/Form/form'
-import Header from '../components/Header/header'
+import { Badge, Button, Container } from "@mantine/core";
+import { useRouter } from "next/router";
+import { FaWhatsapp } from "react-icons/fa";
+import styled from "styled-components";
+import { Footer } from "../components/Footer/footer";
+import Form from "../components/Form/form";
+import Header from "../components/Header/header";
 
 const ContainerItem = styled.div`
   display: grid;
@@ -17,11 +16,11 @@ const ContainerItem = styled.div`
   @media (max-width: 768px) {
     justify-items: center;
   }
-`
+`;
 const ContainerProduct = styled.div`
   display: grid;
   gap: 1.618rem;
-`
+`;
 const ContainerCard = styled.div`
   display: flex;
   border-radius: 24px;
@@ -32,7 +31,7 @@ const ContainerCard = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
   }
-`
+`;
 const InfoCard = styled.div`
   display: grid;
   justify-items: center;
@@ -40,7 +39,7 @@ const InfoCard = styled.div`
   @media (max-width: 768px) {
     margin: 0;
   }
-`
+`;
 const ImageCard = styled.img`
   display: block;
   margin-left: auto;
@@ -48,7 +47,7 @@ const ImageCard = styled.img`
   height: 272px;
   object-fit: cover;
   border-radius: 24px;
-`
+`;
 const TitleCard = styled.div`
   display: grid;
   justify-items: start;
@@ -74,7 +73,7 @@ const TitleCard = styled.div`
       transform: scale(1.1);
     }
   }
-`
+`;
 const Title = styled.div`
   display: grid;
   justify-items: center;
@@ -90,12 +89,12 @@ const Title = styled.div`
   strong {
     color: #ff7f00;
   }
-`
+`;
 const ImageContainer = styled.div`
   display: grid;
   background-color: black;
   border-radius: 24px;
-`
+`;
 const Image = styled.img`
   opacity: 0.4;
   height: 400px;
@@ -105,7 +104,7 @@ const Image = styled.img`
   @media (max-width: 768px) {
     height: 500px;
   }
-`
+`;
 const PromisseBar = styled.div`
   display: grid;
   width: 100%;
@@ -128,10 +127,10 @@ const PromisseBar = styled.div`
     flex-direction: column;
     margin: 1.2rem 0 0 0;
   }
-`
+`;
 const ContainerForm = styled.div`
   display: grid;
-`
+`;
 const TitleForm = styled.div`
   display: grid;
   justify-items: center;
@@ -141,30 +140,30 @@ const TitleForm = styled.div`
   h1 {
     letter-spacing: -1.5px;
   }
-`
+`;
 
 export default function Contato({ products }: { products: any }) {
-  const router = useRouter()
+  const router = useRouter();
 
-  const launch = products.filter((item) => item.launch === true).slice(0, 4)
+  const launch = products.filter((item) => item.launch === true).slice(0, 4);
 
   return (
     <>
       <Header />
-      <Container size={'xl'}>
+      <Container size={"xl"}>
         <Title>
           <h1>
             Somos a força que vem do <strong>campo</strong>.
           </h1>
           <a
             href="https://api.whatsapp.com/send?phone=5551999614425"
-            target={'_blank'}
+            target={"_blank"}
             rel="noreferrer"
           >
             <Button
-              radius={'md'}
-              variant={'light'}
-              color={'green'}
+              radius={"md"}
+              variant={"light"}
+              color={"green"}
               leftIcon={<FaWhatsapp size={18} />}
             >
               Fale com um vendedor
@@ -178,13 +177,13 @@ export default function Contato({ products }: { products: any }) {
                 <InfoCard>
                   <ImageCard
                     style={{
-                      objectFit: 'cover',
-                      height: '264px',
-                      width: '280px',
-                      display: 'block',
-                      maxHeight: '100%',
-                      maxWidth: '100%',
-                      borderRadius: '1rem'
+                      objectFit: "cover",
+                      height: "264px",
+                      width: "280px",
+                      display: "block",
+                      maxHeight: "100%",
+                      maxWidth: "100%",
+                      borderRadius: "1rem",
                     }}
                     src={item.cover}
                     alt={item.name}
@@ -194,8 +193,8 @@ export default function Contato({ products }: { products: any }) {
                   <TitleCard>
                     <Badge
                       variant="gradient"
-                      size={'sm'}
-                      gradient={{ from: '#ff7700', to: '#f58220' }}
+                      size={"sm"}
+                      gradient={{ from: "#ff7700", to: "#f58220" }}
                     >
                       Lançamento
                     </Badge>
@@ -217,11 +216,11 @@ export default function Contato({ products }: { products: any }) {
           <TitleForm>
             <h1>Entre em contato</h1>
           </TitleForm>
-          <Form product_req={'Página de contato'} />
+          <Form product_req={"Página de contato"} />
         </ContainerForm>
       </Container>
       <Footer />
-      <Script
+      {/* <Script
         id="fb-pixel"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
@@ -239,18 +238,18 @@ export default function Contato({ products }: { products: any }) {
           fbq('trackCustom', 'Contato');
           `
         }}
-      />
+      /> */}
     </>
-  )
+  );
 }
 
 export async function getServerSideProps() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_PRODUCTS}`)
-  const products = await response.json()
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_PRODUCTS}`);
+  const products = await response.json();
 
   return {
     props: {
-      products
-    }
-  }
+      products,
+    },
+  };
 }

@@ -1,22 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
-import { Container } from '@mantine/core'
-import dynamic from 'next/dynamic'
-import Script from 'next/script'
-import Banner from '../components/Banners/banners'
-import Company from '../components/Company/company'
-import Featureds from '../components/Featureds/featureds'
-import Header from '../components/Header/header'
-import AcceptCookies from '../utils/cookies'
+import { Container } from "@mantine/core";
+import dynamic from "next/dynamic";
+import Banner from "../components/Banners/banners";
+import Company from "../components/Company/company";
+import Featureds from "../components/Featureds/featureds";
+import Header from "../components/Header/header";
+import AcceptCookies from "../utils/cookies";
 
 const FooterDynamic = dynamic(
-  () => import('../components/Footer/footer').then((mod) => mod.Footer),
+  () => import("../components/Footer/footer").then((mod) => mod.Footer),
   { ssr: false }
-)
+);
 
 const BenefitsDynamic = dynamic(
-  () => import('../components/Benefits/benefits').then((mod) => mod.default),
+  () => import("../components/Benefits/benefits").then((mod) => mod.default),
   { ssr: false }
-)
+);
 
 export default function Home({ banners, featureds }) {
   return (
@@ -24,13 +23,13 @@ export default function Home({ banners, featureds }) {
       <Header />
       <AcceptCookies />
       <Banner data={banners} />
-      <Container size={'xl'}>
+      <Container size={"xl"}>
         <Featureds data={featureds} />
         <Company />
         <BenefitsDynamic />
       </Container>
       <FooterDynamic />
-      <Script
+      {/* <Script
         id="fb-pixel"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
@@ -48,22 +47,22 @@ export default function Home({ banners, featureds }) {
           fbq('trackCustom', 'Página inicial');
           `
         }}
-      />
+      /> */}
     </>
-  )
+  );
 }
 
 export async function getServerSideProps() {
-  const banners = await fetch(`${process.env.NEXT_PUBLIC_API_BANNERS}`)
-  const bannersJson = await banners.json()
+  const banners = await fetch(`${process.env.NEXT_PUBLIC_API_BANNERS}`);
+  const bannersJson = await banners.json();
 
-  const featureds = await fetch(`${process.env.NEXT_PUBLIC_API_FEATURES}`)
-  const featuredsJson = await featureds.json()
+  const featureds = await fetch(`${process.env.NEXT_PUBLIC_API_FEATURES}`);
+  const featuredsJson = await featureds.json();
 
   return {
     props: {
       banners: bannersJson,
-      featureds: featuredsJson
-    }
-  }
+      featureds: featuredsJson,
+    },
+  };
 }

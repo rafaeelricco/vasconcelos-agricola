@@ -1,34 +1,33 @@
-import { Button, Container } from '@mantine/core'
-import { useRouter } from 'next/router'
-import Script from 'next/script'
-import Consortium from '../components/Consortium/consortium'
-import { Footer } from '../components/Footer/footer'
-import Header from '../components/Header/header'
-import Checked from '/assets/icons/consortium/checked.svg'
-import CreditCard from '/assets/icons/consortium/credit-card.svg'
-import consortium from '/assets/scss/consortium.module.scss'
+import { Button, Container } from "@mantine/core";
+import { useRouter } from "next/router";
+import Consortium from "../components/Consortium/consortium";
+import { Footer } from "../components/Footer/footer";
+import Header from "../components/Header/header";
+import Checked from "/assets/icons/consortium/checked.svg";
+import CreditCard from "/assets/icons/consortium/credit-card.svg";
+import consortium from "/assets/scss/consortium.module.scss";
 
 export default function Consorcio() {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <>
       <Header />
-      <Container size={'xl'}>
+      <Container size={"xl"}>
         <h1 className={consortium.title}>Jacto Consórcio Nacional</h1>
         <Button
           disabled
           style={{
-            fontSize: '1rem',
-            color: '#FF7F00',
-            backgroundColor: '#ffff',
-            borderColor: '#FF7F00',
-            borderStyle: 'solid',
-            borderWidth: '1px',
-            borderRadius: '0.618rem',
-            height: '35px',
-            marginBottom: '1rem',
-            zIndex: '1'
+            fontSize: "1rem",
+            color: "#FF7F00",
+            backgroundColor: "#ffff",
+            borderColor: "#FF7F00",
+            borderStyle: "solid",
+            borderWidth: "1px",
+            borderRadius: "0.618rem",
+            height: "35px",
+            marginBottom: "1rem",
+            zIndex: "1",
           }}
         >
           Semeando histórias de sucesso
@@ -36,7 +35,7 @@ export default function Consorcio() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className={consortium.meridia}
-          src={'/consortium/meridia.webp'}
+          src={"/consortium/meridia.webp"}
           alt="Plantadeira Merídia 200"
         />
         <h2 className={consortium.subtitle}>
@@ -81,7 +80,7 @@ export default function Consorcio() {
         <Consortium />
       </Container>
       <Footer />
-      <Script
+      {/* <Script
         id="fb-pixel"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
@@ -99,7 +98,7 @@ export default function Consorcio() {
           fbq('trackCustom', 'Consorcio');
           `
         }}
-      />
+      /> */}
     </>
-  )
+  );
 }

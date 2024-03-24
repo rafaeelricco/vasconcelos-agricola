@@ -1,13 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import { Container, Select } from '@mantine/core'
-import { useRouter } from 'next/router'
-import Script from 'next/script'
-import styled from 'styled-components'
-import Card from '../../components/Card/card'
-import { Footer } from '../../components/Footer/footer'
-import Header from '../../components/Header/header'
-import { options } from '../../utils/options'
-import { slugfy } from '../../utils/slugfy'
+import { Container, Select } from "@mantine/core";
+import { useRouter } from "next/router";
+import styled from "styled-components";
+import Card from "../../components/Card/card";
+import { Footer } from "../../components/Footer/footer";
+import Header from "../../components/Header/header";
+import { options } from "../../utils/options";
+import { slugfy } from "../../utils/slugfy";
 
 const Options = styled.div`
   display: grid;
@@ -17,7 +16,7 @@ const Options = styled.div`
   @media (max-width: 680px) {
     grid-auto-flow: dense;
   }
-`
+`;
 const List = styled.div`
   display: flex;
   flex-flow: row wrap;
@@ -30,22 +29,22 @@ const List = styled.div`
     flex-flow: column;
     align-items: center;
   }
-`
+`;
 
 export default function Produtos() {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <>
       <Header />
-      <Container size={'xl'}>
+      <Container size={"xl"}>
         <Options>
           <Select
             label="Qual a linha de produtos?"
             placeholder="Selecione"
-            radius={'md'}
+            radius={"md"}
             data={[...options]}
             onChange={(data) => {
-              router.push(`/produtos/categoria/${slugfy(data)}`)
+              router.push(`/produtos/categoria/${slugfy(data)}`);
             }}
           />
 
@@ -53,7 +52,7 @@ export default function Produtos() {
           <Select
             label="Tamanho da área"
             placeholder="Selecione"
-            radius={'md'}
+            radius={"md"}
             data={[]}
             disabled
           />
@@ -61,56 +60,56 @@ export default function Produtos() {
         <List>
           <Card
             id={1}
-            path={'/produtos/categoria/lancamentos'}
-            title={'Lançamentos'}
-            img={'category/lancamento.webp'}
+            path={"/produtos/categoria/lancamentos"}
+            title={"Lançamentos"}
+            img={"category/lancamento.webp"}
           />
           <Card
             id={2}
-            path={'/produtos/categoria/adubadoras'}
-            title={'Adubadoras'}
-            img={'category/adubadoras.webp'}
+            path={"/produtos/categoria/adubadoras"}
+            title={"Adubadoras"}
+            img={"category/adubadoras.webp"}
           />
           <Card
             id={3}
-            path={'/produtos/categoria/plantadeiras'}
-            title={'Plantadeiras'}
-            img={'category/plantadeiras.webp'}
+            path={"/produtos/categoria/plantadeiras"}
+            title={"Plantadeiras"}
+            img={"category/plantadeiras.webp"}
           />
           <Card
             id={4}
-            path={'/produtos/categoria/pulverizadores-automotrizes'}
-            title={'Pulverizadores Automotrizes'}
-            img={'category/pulverizadores-automotrizes.webp'}
+            path={"/produtos/categoria/pulverizadores-automotrizes"}
+            title={"Pulverizadores Automotrizes"}
+            img={"category/pulverizadores-automotrizes.webp"}
           />
           <Card
             id={5}
-            path={'produtos/categoria/pulverizadores-de-barras'}
-            title={'Pulverizadores de barra'}
-            img={'category/pulverizadores-de-barra.webp'}
+            path={"produtos/categoria/pulverizadores-de-barras"}
+            title={"Pulverizadores de barra"}
+            img={"category/pulverizadores-de-barra.webp"}
           />
           <Card
             id={6}
-            path={'/produtos/categoria/pulverizadores-turbos'}
-            title={'Pulverizadores turbos'}
-            img={'category/pulverizadores-turbos.webp'}
+            path={"/produtos/categoria/pulverizadores-turbos"}
+            title={"Pulverizadores turbos"}
+            img={"category/pulverizadores-turbos.webp"}
           />
           <Card
             id={7}
-            path={'produtos/categoria/pecas-e-acessorios'}
-            title={'Peças e Acessórios'}
-            img={'category/pecas-acessorios.webp'}
+            path={"produtos/categoria/pecas-e-acessorios"}
+            title={"Peças e Acessórios"}
+            img={"category/pecas-acessorios.webp"}
           />
           <Card
             id={8}
-            path={'/produtos/categoria/usados'}
-            title={'Usados'}
-            img={'category/usados.webp'}
+            path={"/produtos/categoria/usados"}
+            title={"Usados"}
+            img={"category/usados.webp"}
           />
         </List>
       </Container>
       <Footer />
-      <Script
+      {/* <Script
         id="fb-pixel"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
@@ -128,7 +127,7 @@ export default function Produtos() {
           fbq('trackCustom', 'Produtos');
           `
         }}
-      />
+      /> */}
     </>
-  )
+  );
 }

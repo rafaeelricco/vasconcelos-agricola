@@ -1,22 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
-import { Carousel } from '@mantine/carousel'
-import { Container, Modal } from '@mantine/core'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import Script from 'next/script'
-import { useState } from 'react'
-import { FaList } from 'react-icons/fa'
-import styled from 'styled-components'
-import banner from '../../../assets/scss/produtos/banner-produto.module.scss'
-import styles from '../../../assets/scss/produtos/product-details.module.scss'
-import consortium from '../../../components/Consortium/consortium.module.scss'
-import { Footer } from '../../../components/Footer/footer'
-import Form from '../../../components/Form/form'
-import Header from '../../../components/Header/header'
-import { Products } from '../../../typings'
+import { Carousel } from "@mantine/carousel";
+import { Container, Modal } from "@mantine/core";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { FaList } from "react-icons/fa";
+import styled from "styled-components";
+import banner from "../../../assets/scss/produtos/banner-produto.module.scss";
+import styles from "../../../assets/scss/produtos/product-details.module.scss";
+import consortium from "../../../components/Consortium/consortium.module.scss";
+import { Footer } from "../../../components/Footer/footer";
+import Form from "../../../components/Form/form";
+import Header from "../../../components/Header/header";
+import { Products } from "../../../typings";
 
 interface Props {
-  product: any
+  product: any;
 }
 
 const Img = styled.img`
@@ -29,7 +28,7 @@ const Img = styled.img`
   @media (max-width: 600px) {
     height: 100%;
   }
-`
+`;
 
 const Youtube = styled.div`
   iframe {
@@ -42,76 +41,76 @@ const Youtube = styled.div`
       height: 300px;
     }
   }
-`
+`;
 
 const Title = styled.h1`
   font-size: 2.5rem;
   @media (max-width: 600px) {
     font-size: 2.4rem;
   }
-`
+`;
 
 const Promisse = styled.p`
   @media (max-width: 600px) {
     font-size: 1.118rem;
   }
-`
+`;
 
 export default function ProductPage({ product }: Props) {
-  const router = useRouter()
-  const { produto, slug } = router.query
+  const router = useRouter();
+  const { produto, slug } = router.query;
   const productName =
-    slug.toString().split('-').join(' ').charAt(0).toUpperCase() +
-    slug.toString().split('-').join(' ').slice(1)
+    slug.toString().split("-").join(" ").charAt(0).toUpperCase() +
+    slug.toString().split("-").join(" ").slice(1);
 
-  const productDetails = []
+  const productDetails = [];
   const p = product.filter((p) => {
     if (p.slug == slug) {
-      return productDetails.push(p)
+      return productDetails.push(p);
     }
-  })
+  });
 
-  const banners = []
+  const banners = [];
   const b = productDetails.filter((b) => {
-    return banners.push(b.images)
-  })
-  const bannersProduct = banners.flat()
+    return banners.push(b.images);
+  });
+  const bannersProduct = banners.flat();
 
-  const youtube = []
+  const youtube = [];
   const filterYoutube = productDetails.filter((y) => {
-    return youtube.push(y.youtube)
-  })
-  const string = youtube.toString()
-  const slice = string.split('/')
-  const video = slice[3]
+    return youtube.push(y.youtube);
+  });
+  const string = youtube.toString();
+  const slice = string.split("/");
+  const video = slice[3];
 
-  const flyer = []
+  const flyer = [];
   const filterFlyer = productDetails.filter((f) => {
-    return flyer.push(f.flyer)
-  })
-  const flyerProduct = flyer.flat()
+    return flyer.push(f.flyer);
+  });
+  const flyerProduct = flyer.flat();
 
-  const [opened, setOpened] = useState(false)
+  const [opened, setOpened] = useState(false);
 
   const removeVideo = (video) => {
     if (video == undefined) {
-      return 'none'
+      return "none";
     } else {
-      return 'block'
+      return "block";
     }
-  }
+  };
 
-  const name = []
+  const name = [];
   const filterName = productDetails.filter((n) => {
-    return name.push(n.name)
-  })
-  const nameProduct = name.toString()
+    return name.push(n.name);
+  });
+  const nameProduct = name.toString();
 
-  const productNames = []
+  const productNames = [];
   const filterProductNames = product.filter((n) => {
-    return productNames.push(n.name)
-  })
-  const productsList = productNames
+    return productNames.push(n.name);
+  });
+  const productsList = productNames;
 
   return (
     <>
@@ -143,9 +142,9 @@ export default function ProductPage({ product }: Props) {
                     <Link
                       href="/consorcio"
                       style={{
-                        textDecoration: 'none',
-                        color: '#fff',
-                        fontSize: '14px'
+                        textDecoration: "none",
+                        color: "#fff",
+                        fontSize: "14px",
                       }}
                     >
                       Consórico Jacto
@@ -155,15 +154,15 @@ export default function ProductPage({ product }: Props) {
                 <div className={banner.reading}>
                   <FaList
                     style={{
-                      marginTop: '1px'
+                      marginTop: "1px",
                     }}
                     color="#FF7F00"
                   />
                   <a
                     style={{
-                      textDecoration: 'none',
-                      color: '#FF7F00',
-                      fontWeight: '600'
+                      textDecoration: "none",
+                      color: "#FF7F00",
+                      fontWeight: "600",
                     }}
                     href={`${flyerProduct}`}
                     target="_blank"
@@ -176,10 +175,10 @@ export default function ProductPage({ product }: Props) {
               <div className={banner.overlay}>
                 <img
                   style={{
-                    width: '100%',
-                    height: '90vh',
-                    opacity: '0.4',
-                    objectFit: 'cover'
+                    width: "100%",
+                    height: "90vh",
+                    opacity: "0.4",
+                    objectFit: "cover",
                   }}
                   src={item.images[0].image_file}
                   alt={item.name}
@@ -189,20 +188,20 @@ export default function ProductPage({ product }: Props) {
           </Carousel.Slide>
         ))}
       </Carousel>
-      <Container size={'xl'}>
+      <Container size={"xl"}>
         {productDetails.map((product) => (
           <div key={product.id}>
             <div
               className={styles.details}
               dangerouslySetInnerHTML={{
-                __html: product.description
+                __html: product.description,
               }}
             />
           </div>
         ))}
         <Carousel
           style={{
-            marginBottom: '50px'
+            marginBottom: "50px",
           }}
           height="100%"
           withIndicators
@@ -218,16 +217,16 @@ export default function ProductPage({ product }: Props) {
             id="video"
             className={banner.youtube}
             style={{
-              width: '100%',
-              marginBottom: '40px',
-              display: `${removeVideo(video)}`
+              width: "100%",
+              marginBottom: "40px",
+              display: `${removeVideo(video)}`,
             }}
             src={`https://www.youtube.com/embed/${video}`}
           ></iframe>
         </Youtube>
       </Container>
       <Footer />
-      <Script
+      {/* <Script
         id="fb-pixel"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
@@ -245,18 +244,18 @@ export default function ProductPage({ product }: Props) {
           fbq('trackCustom', '${productName}');
           `
         }}
-      />
+      /> */}
     </>
-  )
+  );
 }
 
 export async function getServerSideProps() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_PRODUCTS}`)
-  const data = await response.json()
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_PRODUCTS}`);
+  const data = await response.json();
 
   return {
     props: {
-      product: data
-    }
-  }
+      product: data,
+    },
+  };
 }
